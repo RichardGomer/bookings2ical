@@ -24,7 +24,7 @@ function getYear(){
 function dtstamp(){
   var date = new Date();
   
-  return date.getFullYear().toString() + ("0" + date.getMonth()).slice(-2) + ("0" + date.getDate()).slice(-2) + "T" + ("0" + date.getHours()).slice(-2) + ("0" + date.getMinutes()).slice(-2) + ("0" + date.getSeconds()).slice(-2) + "Z";
+  return date.getFullYear().toString() + ("0" + date.getMonth()).slice(-2) + ("0" + date.getDate()).slice(-2) + "T" + ("0" + date.getHours()).slice(-2) + ("0" + date.getMinutes()).slice(-2) + ("0" + date.getSeconds()).slice(-2) + "";
 }
 
 var ical = "BEGIN:VCALENDAR\n" + 
@@ -46,8 +46,8 @@ $('.viewMyBookingsTable tr').each(function(id, row){
   var start = time[0].trim().replace(/:/, '');
   var end = time[1].trim().replace(/:/, '');
   
-  var dtstart = dt + "T" + start + "00Z";
-  var dtend = dt + "T" + end + "00Z";
+  var dtstart = dt + "T" + start + "00";
+  var dtend = dt + "T" + end + "00";
       
   var uid = dt + "_" + txtname.replace(/[^a-zA-Z]+/g, '');
   
