@@ -14,7 +14,7 @@
 function monthNameToNumber(monthName) {
     var myDate = new Date(monthName + " 1, 2000");
     var monthDigit = myDate.getMonth();
-    return isNaN(monthDigit) ? 0 : "0" + (monthDigit + 1).toString();
+    return isNaN(monthDigit) ? 0 : (monthDigit < 9 ? "0" : "") + (monthDigit + 1).toString();
 }
 
 function getYear(){
